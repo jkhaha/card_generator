@@ -20,23 +20,11 @@ let numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'K
 
 
   function dealCards(){
-    if (deck.length > 1) {
-
     for (let i=0; i < 4; i++){
       var cards = deck[Math.floor(Math.random()*deck.length)];
       fourCards.push(cards)
     }
-    for (let j=0; j< fourCards.length; j++){
-      let card= document.createElement('div')
-      let cardNumber = document.createElement('div')
-      let cardValue = document.createElement('div')
-
-      cardNumber.append(fourCards[j].number)
-      cardValue.append(fourCards[j].suit)
-      card.append(cardNumber)
-      card.append(cardValue)
-      cardDiv.append(card)
-    }
+    console.log(fourCards);
     deck = deck.filter(card => !fourCards.includes(card))
 
     fourCards = []
@@ -44,12 +32,19 @@ let numbers = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'K
       cardDiv.removeChild(cardDiv.childNodes[i])
     }
   }
-  else {
-    console.log('done')
-  }
-  }
 
-
+  //
+  // for (let j=0; j< fourCards.length; j++){
+  //   let card= document.createElement('div')
+  //   let cardNumber = document.createElement('div')
+  //   let cardValue = document.createElement('div')
+  //
+  //   cardNumber.append(fourCards[j].number)
+  //   cardValue.append(fourCards[j].suit)
+  //   card.append(cardNumber)
+  //   card.append(cardValue)
+  //   cardDiv.append(card)
+  // }
 
 
 
